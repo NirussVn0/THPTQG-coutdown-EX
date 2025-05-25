@@ -73,24 +73,6 @@ export async function predictUniversityScore(input: PredictUniversityScoreInput)
 
   return { predictions: mockedPredictions };
 
-  // Uncomment the following to use the actual Genkit flow once the prompt is defined and API key is set up.
-  /*
-  try {
-    console.log("Calling predictUniversityScoreFlow with input:", input);
-    const result = await predictUniversityScoreFlow(input);
-    console.log("Received result from predictUniversityScoreFlow:", result);
-    return result;
-  } catch (error) {
-    console.error("Error in predictUniversityScore calling predictUniversityScoreFlow:", error);
-    // It's often better to throw the error to be caught by a global error handler
-    // or to return a structured error response.
-    // For now, returning an empty prediction array on error.
-     return { predictions: [] };
-  }
-  */
-}
-
-// Define the prompt for Genkit
 const predictScorePrompt = ai.definePrompt({
   name: 'predictUniversityScorePrompt',
   input: { schema: PredictUniversityScoreInputSchema },
