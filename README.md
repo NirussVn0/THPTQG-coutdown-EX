@@ -8,12 +8,12 @@ A sleek countdown web application for the Vietnamese High School Graduation Exam
 
 1. Clone the repository:
    ```bash
-   git clone URL_ADDRESS.com/NirussVn0/thptqg-countdown.git
+   git clone https://github.com/NirussVn0/THPTQG-coutdown-EX.git
    ```
-2. add api AI in .env (.env.example) file
+2. rename `.env.example` file to `.env` and add api AI key to `.env`  file
 3. Install dependencies:
    ```bash
-   npm i
+   npm install
    ```
 4. Start the development server:
    ```bash
@@ -23,7 +23,7 @@ A sleek countdown web application for the Vietnamese High School Graduation Exam
 
 ## 🌟 Live Demo
 
-Check out the live demo: [Graduation Countdown](https://thptqg-countdown.vercel.app)
+Check out the live demo: [Graduation Countdown](https://thptqg-countdown.vercel.app) (The site is currently under maintenance)
 
 ## 🛠️ Tech Stack
 
@@ -34,4 +34,4 @@ Check out the live demo: [Graduation Countdown](https://thptqg-countdown.vercel.
 
 ## 🎨 Created by
 
-SabiCoder Studio | Developer: NirussVn0
+SabiCoder Studio | Developer: NirussVn0 | Tester: Beteng
