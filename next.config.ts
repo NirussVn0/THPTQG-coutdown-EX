@@ -20,4 +20,11 @@ const nextConfig: NextConfig = {
   },
 };
 
+module.exports = {
+  reactStrictMode: true,
+  experimental: {
+    serverActions: true, // if using app router features
+  },
+};
+
 export default nextConfig;
