@@ -10,7 +10,7 @@ A sleek countdown web application for the Vietnamese High School Graduation Exam
    ```bash
    git clone https://github.com/NirussVn0/THPTQG-coutdown-EX.git
    ```
-2. rename `.env.example` file `to .env` and add api AI key to `.env`  file
+2. rename `.env.example` file to `.env` and add api AI key to `.env`  file
 3. Install dependencies:
    ```bash
    npm install
