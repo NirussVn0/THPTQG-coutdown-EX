@@ -28,7 +28,7 @@ A sleek countdown web application for the Vietnamese High School Graduation Exam
 
 ## 🌟 Live Demo
 
-Check out the live demo: [Graduation Countdown](https://thptqg-countdown.vercel.app) (The site is currently under maintenance)
+Check out the live demo: [Graduation Countdown](https://project.sabicoder.xyz/) (The site is currently under maintenance)
 
 ## 🛠️ Tech Stack
 
