@@ -12,6 +12,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Loader2, Lightbulb, ListChecks, AlertCircle } from 'lucide-react';
 import { handlePredictScore } from '@/app/actions';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { type PredictUniversityScoreOutput } from '@/ai/flows/predict-university-score';
 
 const formSchema = z.object({
   universityNames: z.string().min(3, { message: "Vui lòng nhập tên ít nhất một trường đại học." }),
@@ -69,9 +70,9 @@ const UniversityPredictor: React.FC = () => {
                 <FormItem>
                   <FormLabel>Tên các trường Đại học</FormLabel>
                   <FormControl>
-                    <Input 
-                      placeholder="Ví dụ: Đại học Ngoại thương, Đại học Kinh tế Quốc dân, ..." 
-                      {...field} 
+                    <Input
+                      placeholder="Ví dụ: Đại học Ngoại thương, Đại học Kinh tế Quốc dân, ..."
+                      {...field}
                       className="bg-background/70 focus:bg-background"
                       aria-label="Tên các trường Đại học bạn quan tâm, cách nhau bằng dấu phẩy"
                     />
@@ -109,7 +110,7 @@ const UniversityPredictor: React.FC = () => {
       {predictions && predictions.length > 0 && (
         <div className="p-6 pt-0">
           <h3 className="text-xl font-semibold mb-4 text-primary flex items-center">
-            <ListChecks className="mr-2 w-6 h-6"/>
+            <ListChecks className="mr-2 w-6 h-6" />
             Kết quả dự đoán:
           </h3>
           <ScrollArea className="h-[200px] rounded-md border p-4 bg-background/50">
@@ -127,13 +128,13 @@ const UniversityPredictor: React.FC = () => {
         </div>
       )}
       {predictions && predictions.length === 0 && !isPending && (
-         <div className="p-6 pt-0">
-            <Alert>
-                <Lightbulb className="h-4 w-4" />
-                <AlertTitle>Không có kết quả</AlertTitle>
-                <AlertDescription>Không tìm thấy dự đoán cho các trường bạn đã nhập. Vui lòng kiểm tra lại tên trường.</AlertDescription>
-            </Alert>
-         </div>
+        <div className="p-6 pt-0">
+          <Alert>
+            <Lightbulb className="h-4 w-4" />
+            <AlertTitle>Không có kết quả</AlertTitle>
+            <AlertDescription>Không tìm thấy dự đoán cho các trường bạn đã nhập. Vui lòng kiểm tra lại tên trường.</AlertDescription>
+          </Alert>
+        </div>
       )}
     </Card>
   );
