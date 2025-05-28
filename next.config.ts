@@ -1,12 +1,13 @@
-import type {NextConfig} from 'next';
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   /* config options here */
+  reactStrictMode: true,
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: false,
   },
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: false,
   },
   images: {
     remotePatterns: [
@@ -18,12 +19,10 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-};
-
-module.exports = {
-  reactStrictMode: true,
   experimental: {
-    serverActions: true, // if using app router features
+    serverActions: {
+      allowedOrigins: ['localhost:3000', 'localhost:3001'],
+    },
   },
 };
 

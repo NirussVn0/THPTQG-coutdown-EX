@@ -1,5 +1,5 @@
-import type {Metadata} from 'next';
-import {Geist, Geist_Mono} from 'next/font/google';
+import type { Metadata, Viewport } from 'next';
+import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
@@ -14,8 +14,34 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Exam Countdown VN',
-  description: 'Countdown to the Vietnamese high school graduation exam with motivational messages and university score predictions.',
+  title: 'THPTQG Countdown - Đếm Ngược Thi Tốt Nghiệp',
+  description: 'Ứng dụng đếm ngược thời gian thi tốt nghiệp THPTQG với tin nhắn động viên và dự đoán điểm chuẩn đại học.',
+  keywords: ['THPTQG', 'thi tốt nghiệp', 'đếm ngược', 'điểm chuẩn đại học', 'Vietnam', 'graduation exam'],
+  authors: [{ name: 'THPTQG Countdown Team' }],
+  creator: 'THPTQG Countdown',
+  publisher: 'THPTQG Countdown',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  icons: {
+    icon: [
+      { url: '/icon', sizes: '32x32', type: 'image/png' }
+    ],
+    apple: [
+      { url: '/apple-icon', sizes: '180x180', type: 'image/png' }
+    ],
+  },
+  manifest: '/manifest.json',
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  themeColor: '#3b82f6',
+  colorScheme: 'light',
 };
 
 export default function RootLayout({

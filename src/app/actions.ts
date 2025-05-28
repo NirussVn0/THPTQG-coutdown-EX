@@ -26,10 +26,10 @@ export async function handlePredictScore(formData: FormData): Promise<ActionResu
       error: validatedFields.error.flatten().fieldErrors.universityNames?.join(", ") || "Dữ liệu không hợp lệ.",
     };
   }
-  
+
   const universitiesArray = validatedFields.data.universityNames
     .split(',')
-    .map(name => name.trim())
+    .map((name: string) => name.trim())
     .filter(name => name.length > 0);
 
   if (universitiesArray.length === 0) {
