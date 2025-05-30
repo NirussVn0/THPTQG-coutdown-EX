@@ -73,8 +73,8 @@ const CountdownTimer: React.FC = () => {
   }
 
   return (
-    <div className="flex flex-col items-center space-y-6 my-8 p-6 rounded-xl bg-card/50 shadow-xl backdrop-blur-md" aria-live="polite" aria-atomic="true">
-       <div className="flex items-center space-x-2 text-xl sm:text-2xl font-semibold text-primary">
+    <div className="flex flex-col items-center space-y-6 my-8 p-6 rounded-xl bg-card/50 shadow-xl backdrop-blur-md transition-all duration-300 hover:shadow-2xl hover:bg-card/60" aria-live="polite" aria-atomic="true">
+      <div className="flex items-center space-x-2 text-xl sm:text-2xl font-semibold text-primary">
         <Clock className="w-7 h-7 sm:w-8 sm:h-8" />
         <span>Đếm ngược đến ngày thi THPT Quốc Gia 2025</span>
       </div>

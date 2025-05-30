@@ -50,13 +50,13 @@ const UniversityPredictor: React.FC = () => {
   };
 
   return (
-    <Card className="w-full max-w-2xl mx-auto my-8 shadow-xl bg-card/80 backdrop-blur-sm">
+    <Card className="w-full max-w-2xl mx-auto my-8 shadow-xl bg-card/80 backdrop-blur-sm transition-all duration-300 hover:shadow-2xl hover:bg-card/90 hover:scale-[1.02]">
       <CardHeader>
         <div className="flex items-center space-x-2">
-          <Lightbulb className="w-7 h-7 text-accent" />
-          <CardTitle className="text-2xl">Dự đoán điểm chuẩn Đại học</CardTitle>
+          <Lightbulb className="w-7 h-7 text-accent transition-all duration-300 hover:text-primary hover:scale-110 hover:rotate-12" />
+          <CardTitle className="text-2xl transition-colors duration-300 hover:text-accent">Dự đoán điểm chuẩn Đại học</CardTitle>
         </div>
-        <CardDescription>
+        <CardDescription className="transition-colors duration-300 hover:text-foreground/80">
           Nhập tên các trường bạn quan tâm (cách nhau bởi dấu phẩy, ví dụ: FTU, NEU, HUST) để dự đoán điểm cần thiết.
         </CardDescription>
       </CardHeader>
@@ -73,7 +73,7 @@ const UniversityPredictor: React.FC = () => {
                     <Input
                       placeholder="Ví dụ: Đại học Ngoại thương, Đại học Kinh tế Quốc dân, ..."
                       {...field}
-                      className="bg-background/70 focus:bg-background"
+                      className="bg-background/70 focus:bg-background transition-all duration-300 hover:bg-background/80 hover:shadow-md"
                       aria-label="Tên các trường Đại học bạn quan tâm, cách nhau bằng dấu phẩy"
                     />
                   </FormControl>
@@ -83,7 +83,7 @@ const UniversityPredictor: React.FC = () => {
             />
           </CardContent>
           <CardFooter>
-            <Button type="submit" disabled={isPending} className="w-full">
+            <Button type="submit" disabled={isPending} className="w-full transition-all duration-300 hover:scale-105 hover:shadow-lg">
               {isPending ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -113,14 +113,54 @@ const UniversityPredictor: React.FC = () => {
             <ListChecks className="mr-2 w-6 h-6" />
             Kết quả dự đoán:
           </h3>
-          <ScrollArea className="h-[200px] rounded-md border p-4 bg-background/50">
+          <ScrollArea className="h-[300px] rounded-md border p-4 bg-background/50">
             <ul className="space-y-3">
               {predictions.map((pred, index) => (
-                <li key={index} className="p-3 bg-card rounded-md shadow-sm border border-border/50">
-                  <p className="font-semibold text-foreground">{pred.university}</p>
-                  <p className="text-accent text-lg">
-                    Điểm dự kiến: <span className="font-bold">{pred.predictedScore.toFixed(2)}</span>
-                  </p>
+                <li key={index} className={`p-4 rounded-md shadow-sm border transition-all duration-300 hover:shadow-md hover:scale-[1.02] ${pred.predictedScore === 0
+                    ? 'bg-red-50 border-red-200 hover:bg-red-100 hover:border-red-300'
+                    : 'bg-card border-border/50 hover:bg-card/90 hover:border-accent/30'
+                  }`}>
+                  <div className="flex justify-between items-start mb-2">
+                    <p className={`font-semibold transition-colors duration-300 ${pred.predictedScore === 0 ? 'text-red-700' : 'text-foreground hover:text-accent'
+                      }`}>{pred.university}</p>
+                    {pred.predictedScore > 0 && (
+                      <span className={`text-xs px-2 py-1 rounded-full ${pred.trend === 'increasing' ? 'bg-green-100 text-green-700' :
+                        pred.trend === 'decreasing' ? 'bg-red-100 text-red-700' :
+                          'bg-blue-100 text-blue-700'
+                        }`}>
+                        {pred.trend === 'increasing' ? '📈 Tăng' : pred.trend === 'decreasing' ? '📉 Giảm' : '📊 Ổn định'}
+                      </span>
+                    )}
+                    {pred.predictedScore === 0 && (
+                      <span className="text-xs px-2 py-1 rounded-full bg-red-100 text-red-700">
+                        ❌ Không tìm thấy
+                      </span>
+                    )}
+                  </div>
+                  {pred.predictedScore > 0 ? (
+                    <>
+                      <p className="text-accent text-lg transition-colors duration-300 hover:text-primary mb-2">
+                        Điểm dự kiến: <span className="font-bold">{pred.predictedScore.toFixed(2)}</span>
+                      </p>
+                      <p className="text-sm text-muted-foreground mb-2">{pred.reasoning}</p>
+                      <div className="flex justify-between items-center text-xs text-muted-foreground">
+                        <span>Độ tin cậy: {(pred.confidence * 100).toFixed(0)}%</span>
+                        <div className="w-16 bg-gray-200 rounded-full h-1.5">
+                          <div
+                            className="bg-accent h-1.5 rounded-full transition-all duration-300"
+                            style={{ width: `${pred.confidence * 100}%` }}
+                          ></div>
+                        </div>
+                      </div>
+                    </>
+                  ) : (
+                    <div className="text-red-600">
+                      <p className="text-sm mb-2">{pred.reasoning}</p>
+                      <p className="text-xs text-red-500">
+                        💡 Gợi ý: Thử nhập "Đại học Ngoại thương", "Đại học Bách khoa Hà Nội", "Đại học Y Hà Nội"...
+                      </p>
+                    </div>
+                  )}
                 </li>
               ))}
             </ul>
