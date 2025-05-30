@@ -27,7 +27,7 @@ export default function Home() {
         <UniversityPredictor />
 
         <footer className="mt-12 sm:mt-16 text-center text-sm text-muted-foreground transition-all duration-300 hover:text-foreground/70">
-          <p className="transition-colors duration-300 hover:text-accent"> &copy; {new Date().getFullYear()} SabiCoder Studio - Author Niruss. </p>
+          <p className="transition-colors duration-300 hover:text-accent"> &copy; {new Date().getFullYear()} SabiCoder Studio - Author Niruss, Tester: Beteng </p>
           <p className="mt-1 transition-colors duration-300 hover:text-foreground/80">
             Một sản phẩm được tạo ra với <span className="transition-transform duration-300 hover:scale-125 inline-block">❤️</span> và <span className="transition-transform duration-300 hover:scale-125 inline-block">☕</span>. <br />
             Chúc các sĩ tử ôn thi hiệu quả
