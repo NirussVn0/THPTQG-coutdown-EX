@@ -57,7 +57,7 @@ const UniversityPredictor: React.FC = () => {
           <CardTitle className="text-2xl transition-colors duration-300 hover:text-accent">Dự đoán điểm chuẩn Đại học</CardTitle>
         </div>
         <CardDescription className="transition-colors duration-300 hover:text-foreground/80">
-          Nhập tên các trường bạn quan tâm (cách nhau bởi dấu phẩy, ví dụ: FTU, NEU, HUST) để dự đoán điểm cần thiết.
+          Nhập tên các trường bạn quan tâm (cách nhau bởi dấu phẩy, ví dụ: FTU, NEU, HUST) để dự đoán điểm cần thiết (lưu ý này đã dựa theo 2024 nên có thể không đúng 100%).
         </CardDescription>
       </CardHeader>
       <Form {...form}>
