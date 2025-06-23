@@ -1,3 +1,4 @@
+
 import CountdownTimer from '@/components/countdown-timer';
 import MotivationalMessage from '@/components/motivational-message';
 import UniversityPredictor from '@/components/university-predictor';
@@ -13,18 +14,15 @@ export default function Home() {
   return (
     <>
       <AnimatedCursor />
-      <main className="flex flex-col items-center justify-center min-h-screen p-4 sm:p-6 md:p-8 selection:bg-accent selection:text-accent-foreground">
-        <PageAnimations animationType="slideInLeft" delay={100}>
-          <div className="absolute top-4 left-4 z-10">
-            <VisitorCounter />
-          </div>
-        </PageAnimations>
-        <PageAnimations animationType="slideInRight" delay={200}>
-          <div className="absolute top-4 right-4 z-10 flex items-center space-x-2">
-            <AuthorProfile />
-            <ThemeToggle />
-          </div>
-        </PageAnimations>
+      <main className="relative flex flex-col items-center justify-center min-h-screen pt-16 pb-4 px-4 sm:pt-20 sm:pb-6 sm:px-6 md:pt-24 md:pb-8 md:px-8 selection:bg-accent selection:text-accent-foreground">
+        {/* Fixed Navigation Elements */}
+        <div className="fixed-nav-left animate-slide-in-left animate-delay-100">
+          <VisitorCounter />
+        </div>
+        <div className="fixed-nav-right flex items-center space-x-2 sm:space-x-2 animate-slide-in-right animate-delay-200">
+          <AuthorProfile />
+          <ThemeToggle />
+        </div>
         <PageAnimations animationType="fadeInUp" delay={300}>
           <div className="text-center mb-8 sm:mb-12">
           <div className="inline-flex items-center justify-center p-3 bg-primary rounded-full mb-4 shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-110 hover:bg-accent hover:rotate-12 interactive-hover micro-bounce">

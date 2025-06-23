@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -284,6 +285,57 @@
 
 .animate-delay-600 {
   animation-delay: 0.6s;
+}
+
+/* Fixed Navigation Positioning */
+.fixed-nav-left {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 50;
+}
+
+.fixed-nav-right {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 50;
+}
+
+/* Mobile adjustments */
+@media (max-width: 640px) {
+  .fixed-nav-left,
+  .fixed-nav-right {
+    top: 0.75rem;
+  }
+  
+  .fixed-nav-left > *,
+  .fixed-nav-right > * {
+    transform: scale(0.9);
+  }
+}
+
+/* Ensure proper layering and no interference with main content */
+.fixed-nav-left,
+.fixed-nav-right {
+  pointer-events: auto;
+}
+
+/* Main content spacing to avoid overlap */
+.main-content-spacing {
+  padding-top: 4rem;
+}
+
+@media (min-width: 640px) {
+  .main-content-spacing {
+    padding-top: 5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-content-spacing {
+    padding-top: 6rem;
+  }
 }
 
 /* Countdown Timer Animations */
