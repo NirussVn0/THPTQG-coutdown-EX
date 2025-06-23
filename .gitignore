@@ -18,7 +18,8 @@
 /out/
 
 # production
-/build
+/build/
+/log/
 
 # misc
 .DS_Store
@@ -38,3 +39,4 @@ yarn-error.log*
 next-env.d.ts
 
 .env
+
