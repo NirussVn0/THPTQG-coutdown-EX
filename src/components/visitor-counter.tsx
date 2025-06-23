@@ -112,13 +112,13 @@ const VisitorCounter: React.FC = () => {
         <TooltipTrigger asChild>
           <Button
             variant="ghost"
-            size="sm"
+            size={"sm"}
             onDoubleClick={resetCounter}
             className={`flex items-center space-x-2 px-3 py-2 h-auto rounded-full bg-card/50 backdrop-blur-sm border border-border/30 transition-all duration-300 hover:bg-card/70 hover:scale-105 hover:shadow-lg hover:shadow-primary/10 group ${
               isNewVisitor ? 'animate-pulse bg-accent/20 border-accent/50' : ''
             }`}
             aria-label={`Website visitors: ${visitorCount}`}
-            title="Double-click to reset counter (dev only)"
+            // title="Double-click to reset counter (dev only)"
           >
             <Eye className={`w-4 h-4 text-primary transition-all duration-300 group-hover:text-accent eye-blink ${
               isAnimating ? 'animate-pulse scale-110' : ''
