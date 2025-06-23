@@ -2,6 +2,8 @@ import CountdownTimer from '@/components/countdown-timer';
 import MotivationalMessage from '@/components/motivational-message';
 import UniversityPredictor from '@/components/university-predictor';
 import AnimatedCursor from '@/components/animated-cursor';
+import ExamScheduleTable from '@/components/exam-schedule-table';
+import ThemeToggle from '@/components/theme-toggle';
 import { GraduationCap } from 'lucide-react';
 
 export default function Home() {
@@ -9,6 +11,9 @@ export default function Home() {
     <>
       <AnimatedCursor />
       <main className="flex flex-col items-center justify-center min-h-screen p-4 sm:p-6 md:p-8 selection:bg-accent selection:text-accent-foreground">
+        <div className="absolute top-4 right-4 z-10">
+          <ThemeToggle />
+        </div>
         <div className="text-center mb-8 sm:mb-12">
           <div className="inline-flex items-center justify-center p-3 bg-primary rounded-full mb-4 shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-110 hover:bg-accent hover:rotate-12">
             <GraduationCap className="w-10 h-10 sm:w-12 sm:h-12 text-primary-foreground transition-colors duration-300 hover:text-accent-foreground" />
@@ -23,6 +28,7 @@ export default function Home() {
         </div>
 
         <CountdownTimer />
+        <ExamScheduleTable />
         <MotivationalMessage />
         <UniversityPredictor />
 
