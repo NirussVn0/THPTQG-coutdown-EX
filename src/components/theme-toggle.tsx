@@ -90,10 +90,10 @@ const ThemeToggle: React.FC = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button 
-          variant="ghost" 
-          size="sm" 
-          className="w-10 h-10 p-0 transition-all duration-300 hover:scale-110 hover:bg-accent/20"
+        <Button
+          variant="ghost"
+          size="sm"
+          className="w-10 h-10 p-0 transition-all duration-300 hover:scale-110 hover:bg-accent/20 interactive-hover micro-bounce"
           aria-label="Chọn giao diện"
         >
           {currentThemeConfig.icon}

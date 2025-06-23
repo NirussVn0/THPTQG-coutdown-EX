@@ -100,11 +100,11 @@ const CountdownTimer: React.FC = () => {
   const { timeLeft, currentExam } = countdownState;
 
   return (
-    <div className="flex flex-col items-center space-y-6 my-8 p-6 rounded-xl bg-card/50 shadow-xl backdrop-blur-md transition-all duration-300 hover:shadow-2xl hover:bg-card/60" aria-live="polite" aria-atomic="true">
+    <div className="flex flex-col items-center space-y-6 my-8 p-6 rounded-xl bg-card/50 shadow-xl backdrop-blur-md transition-all duration-500 hover:shadow-2xl hover:bg-card/60 hover:scale-[1.02] group" aria-live="polite" aria-atomic="true">
       <div className="text-center space-y-2">
         <div className="flex items-center justify-center space-x-2 text-xl sm:text-2xl font-semibold text-primary">
-          <Clock className="w-7 h-7 sm:w-8 sm:h-8" />
-          <span>Đếm ngược đến</span>
+          <Clock className="w-7 h-7 sm:w-8 sm:h-8 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" />
+          <span className="transition-colors duration-300 group-hover:text-accent">Đếm ngược đến</span>
         </div>
         {currentExam && (
           <>

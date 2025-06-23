@@ -4,6 +4,9 @@ import UniversityPredictor from '@/components/university-predictor';
 import AnimatedCursor from '@/components/animated-cursor';
 import ExamScheduleTable from '@/components/exam-schedule-table';
 import ThemeToggle from '@/components/theme-toggle';
+import VisitorCounter from '@/components/visitor-counter';
+import AuthorProfile from '@/components/author-profile';
+import PageAnimations from '@/components/page-animations';
 import { GraduationCap } from 'lucide-react';
 
 export default function Home() {
@@ -11,11 +14,20 @@ export default function Home() {
     <>
       <AnimatedCursor />
       <main className="flex flex-col items-center justify-center min-h-screen p-4 sm:p-6 md:p-8 selection:bg-accent selection:text-accent-foreground">
-        <div className="absolute top-4 right-4 z-10">
-          <ThemeToggle />
-        </div>
-        <div className="text-center mb-8 sm:mb-12">
-          <div className="inline-flex items-center justify-center p-3 bg-primary rounded-full mb-4 shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-110 hover:bg-accent hover:rotate-12">
+        <PageAnimations animationType="slideInLeft" delay={100}>
+          <div className="absolute top-4 left-4 z-10">
+            <VisitorCounter />
+          </div>
+        </PageAnimations>
+        <PageAnimations animationType="slideInRight" delay={200}>
+          <div className="absolute top-4 right-4 z-10 flex items-center space-x-2">
+            <AuthorProfile />
+            <ThemeToggle />
+          </div>
+        </PageAnimations>
+        <PageAnimations animationType="fadeInUp" delay={300}>
+          <div className="text-center mb-8 sm:mb-12">
+          <div className="inline-flex items-center justify-center p-3 bg-primary rounded-full mb-4 shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-110 hover:bg-accent hover:rotate-12 interactive-hover micro-bounce">
             <GraduationCap className="w-10 h-10 sm:w-12 sm:h-12 text-primary-foreground transition-colors duration-300 hover:text-accent-foreground" />
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-primary tracking-tight transition-all duration-300 hover:text-accent hover:scale-105">
@@ -25,20 +37,31 @@ export default function Home() {
             Góp thêm tinh thần cho các sĩ tử. <br />
             Đếm ngược không phải để lo sợ, mà để chuẩn bị bung lụa đúng lúc
           </p>
-        </div>
+          </div>
+        </PageAnimations>
 
-        <CountdownTimer />
-        <ExamScheduleTable />
-        <MotivationalMessage />
-        <UniversityPredictor />
+        <PageAnimations animationType="scaleIn" delay={400}>
+          <CountdownTimer />
+        </PageAnimations>
+        <PageAnimations animationType="fadeInUp" delay={500}>
+          <ExamScheduleTable />
+        </PageAnimations>
+        <PageAnimations animationType="fadeInUp" delay={600}>
+          <MotivationalMessage />
+        </PageAnimations>
+        <PageAnimations animationType="fadeInUp" delay={700}>
+          <UniversityPredictor />
+        </PageAnimations>
 
-        <footer className="mt-12 sm:mt-16 text-center text-sm text-muted-foreground transition-all duration-300 hover:text-foreground/70">
-          <p className="transition-colors duration-300 hover:text-accent"> &copy; {new Date().getFullYear()} SabiCoder Studio - Author: Niruss, Tester: Beteng </p>
-          <p className="mt-1 transition-colors duration-300 hover:text-foreground/80">
-            Một sản phẩm được tạo ra với <span className="transition-transform duration-300 hover:scale-125 inline-block">❤️</span> và <span className="transition-transform duration-300 hover:scale-125 inline-block">☕</span>. <br />
-            Chúc các sĩ tử ôn thi hiệu quả
-          </p>
-        </footer>
+        <PageAnimations animationType="fadeIn" delay={800}>
+          <footer className="mt-12 sm:mt-16 text-center text-sm text-muted-foreground transition-all duration-300 hover:text-foreground/70">
+            <p className="transition-colors duration-300 hover:text-accent"> &copy; {new Date().getFullYear()} SabiCoder Studio - Author: Niruss, Tester: Beteng </p>
+            <p className="mt-1 transition-colors duration-300 hover:text-foreground/80">
+              Một sản phẩm được tạo ra với <span className="transition-transform duration-300 hover:scale-125 inline-block">❤️</span> và <span className="transition-transform duration-300 hover:scale-125 inline-block">☕</span>. <br />
+              Chúc các sĩ tử ôn thi hiệu quả
+            </p>
+          </footer>
+        </PageAnimations>
       </main>
     </>
   );

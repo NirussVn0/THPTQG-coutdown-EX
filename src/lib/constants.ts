@@ -36,13 +36,6 @@ export const EXAM_DATES: ExamDate[] = [
     type: 'exam'
   },
   {
-    id: 'day2-afternoon',
-    date: new Date('2025-06-27T14:30:00'),
-    title: 'Ngoại ngữ (Buổi chiều)',
-    description: 'Môn Ngoại ngữ - 60 phút',
-    type: 'exam'
-  },
-  {
     id: 'reserve',
     date: new Date('2025-06-28T08:00:00'),
     title: 'Ngày dự phòng',
