@@ -1,4 +1,4 @@
-# Graduation Exam Countdown - Thi tổt nghiệp THPTQG 🎓
+# Graduation Exam Countdown - Đếm ngược thi tổt nghiệp THPTQG 🎓
 
 A sleek countdown web application for the Vietnamese High School Graduation Exam, built with Next.js.
 - tăng thêm nghị lực cho các sĩ tữ, tự tin bước trên cuộc hành trình của bản thân mình

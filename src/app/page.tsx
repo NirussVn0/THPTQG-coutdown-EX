@@ -1,7 +1,7 @@
 import CountdownTimer from '@/components/countdown-timer';
 import MotivationalMessage from '@/components/motivational-message';
 import UniversityPredictor from '@/components/university-predictor';
-import AnimatedCursor from '@/components/animated-cursor'; // Will be client component
+import AnimatedCursor from '@/components/animated-cursor';
 import { GraduationCap } from 'lucide-react';
 
 export default function Home() {

@@ -1,20 +1,16 @@
 import { ImageResponse } from 'next/og'
- 
-// Route segment config
+
 export const runtime = 'edge'
- 
-// Image metadata
+
 export const size = {
   width: 180,
   height: 180,
 }
 export const contentType = 'image/png'
- 
-// Image generation
+
 export default function AppleIcon() {
   return new ImageResponse(
     (
-      // ImageResponse JSX element
       <div
         style={{
           background: 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)',
@@ -29,7 +25,6 @@ export default function AppleIcon() {
           position: 'relative',
         }}
       >
-        {/* Clock circle */}
         <div
           style={{
             width: 120,
@@ -43,7 +38,6 @@ export default function AppleIcon() {
             border: '3px solid #e5e7eb',
           }}
         >
-          {/* Clock hands */}
           <div
             style={{
               position: 'absolute',
@@ -68,7 +62,6 @@ export default function AppleIcon() {
               transform: 'translateX(-50%) rotate(-30deg)',
             }}
           />
-          {/* Center dot */}
           <div
             style={{
               width: 6,
@@ -78,8 +71,7 @@ export default function AppleIcon() {
             }}
           />
         </div>
-        
-        {/* Graduation cap */}
+
         <div
           style={{
             position: 'absolute',
@@ -91,7 +83,6 @@ export default function AppleIcon() {
         </div>
       </div>
     ),
-    // ImageResponse options
     {
       ...size,
     }

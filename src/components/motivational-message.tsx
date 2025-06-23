@@ -21,7 +21,7 @@ const MotivationalMessage: React.FC = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       getRandomQuote();
-    }, 30000); // Change quote every 30 seconds
+    }, 30000);
 
     return () => clearInterval(intervalId);
   }, [getRandomQuote]);

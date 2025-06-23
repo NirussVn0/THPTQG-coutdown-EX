@@ -15,11 +15,11 @@ interface Particle {
   color: string;
 }
 
-const CHARACTERS = "0123456789"; // Only numbers as requested "con số" in cursor
+const CHARACTERS = "0123456789";
 const PARTICLE_LIFESPAN = 50; 
 const PARTICLE_FADE_SPEED = 1 / PARTICLE_LIFESPAN;
 const MAX_PARTICLES = 30;
-const EMIT_INTERVAL = 70; // ms
+const EMIT_INTERVAL = 70;
 
 const COLORS = [
   'hsl(var(--primary))',
@@ -48,7 +48,7 @@ const AnimatedCursor: React.FC = () => {
       char,
       opacity: 0.8,
       vx: (Math.random() - 0.5) * 1.5,
-      vy: (Math.random() - 0.5) * 1.5 - 0.5, 
+      vy: (Math.random() - 0.5) * 1.5 - 0.5,
       life: PARTICLE_LIFESPAN + Math.random() * 20,
       size: 10 + Math.random() * 8,
       color: randomColor,
@@ -131,8 +131,8 @@ const AnimatedCursor: React.FC = () => {
             left: mousePos.current.x,
             top: mousePos.current.y,
             transform: 'translate(-50%, -50%)',
-            backgroundColor: 'hsl(var(--accent))', // Use accent for the dot itself
-            transition: 'transform 0.1s ease-out', // Smooth follow
+            backgroundColor: 'hsl(var(--accent))',
+            transition: 'transform 0.1s ease-out',
         }}
        />
     </div>

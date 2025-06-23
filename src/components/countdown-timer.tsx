@@ -35,7 +35,6 @@ const CountdownTimer: React.FC = () => {
 
   useEffect(() => {
     setIsClient(true);
-    // Initial calculation after mount
     setTimeLeft(calculateTimeLeft());
 
     const timer = setInterval(() => {
@@ -46,7 +45,6 @@ const CountdownTimer: React.FC = () => {
   }, [calculateTimeLeft]);
 
   if (!isClient) {
-    // Render placeholder or null on server to avoid hydration mismatch
     return (
       <div className="flex flex-col items-center space-y-6 my-8 p-6 rounded-xl bg-card/50 shadow-xl backdrop-blur-md">
         <div className="flex items-center space-x-2 text-2xl font-semibold text-primary">

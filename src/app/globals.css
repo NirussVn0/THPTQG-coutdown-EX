@@ -4,33 +4,33 @@
 
 @layer base {
   :root {
-    --background: 28 100% 87%; /* Light Orange #FFDAB9 */
-    --foreground: 24 10% 10%; /* Dark Warm Gray */
+    --background: 28 100% 87%;
+    --foreground: 24 10% 10%;
 
-    --card: 28 100% 92%; /* Lighter version of background for cards */
+    --card: 28 100% 92%;
     --card-foreground: 24 10% 10%;
 
     --popover: 28 100% 92%;
     --popover-foreground: 24 10% 10%;
 
-    --primary: 24 100% 60%; /* Vibrant Orange #FF9933 */
-    --primary-foreground: 24 100% 95%; /* Very light for text on primary */
+    --primary: 24 100% 60%;
+    --primary-foreground: 24 100% 95%;
 
-    --secondary: 28 80% 80%; /* A slightly desaturated, lighter orange */
-    --secondary-foreground: 24 100% 30%; /* Darker orange for text on secondary */
+    --secondary: 28 80% 80%;
+    --secondary-foreground: 24 100% 30%;
 
     --muted: 28 70% 90%;
     --muted-foreground: 28 50% 50%;
 
-    --accent: 30 100% 65%; /* Yellow-Orange #FFB347 */
-    --accent-foreground: 30 100% 95%; /* Very light for text on accent */
+    --accent: 30 100% 65%;
+    --accent-foreground: 30 100% 95%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 24 80% 75%;
     --input: 24 80% 80%;
-    --ring: 24 100% 60%; /* Primary color for focus rings */
+    --ring: 24 100% 60%;
 
     --radius: 0.5rem;
 
@@ -39,7 +39,7 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    
+
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -51,8 +51,8 @@
   }
 
   .dark {
-    --background: 24 10% 10%; /* Dark Warm Gray for dark mode background */
-    --foreground: 28 100% 87%; /* Light Orange for dark mode foreground */
+    --background: 24 10% 10%;
+    --foreground: 28 100% 87%;
 
     --card: 24 10% 15%;
     --card-foreground: 28 100% 87%;
@@ -60,8 +60,8 @@
     --popover: 24 10% 15%;
     --popover-foreground: 28 100% 87%;
 
-    --primary: 24 100% 60%; /* Vibrant Orange */
-    --primary-foreground: 24 100% 10%; /* Dark for text on primary in dark mode */
+    --primary: 24 100% 60%;
+    --primary-foreground: 24 100% 10%;
 
     --secondary: 28 80% 20%;
     --secondary-foreground: 28 100% 80%;
@@ -69,8 +69,8 @@
     --muted: 28 70% 25%;
     --muted-foreground: 28 50% 60%;
 
-    --accent: 30 100% 65%; /* Yellow-Orange */
-    --accent-foreground: 30 100% 10%; /* Dark for text on accent in dark mode */
+    --accent: 30 100% 65%;
+    --accent-foreground: 30 100% 10%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
@@ -78,7 +78,7 @@
     --border: 24 80% 30%;
     --input: 24 80% 30%;
     --ring: 24 100% 60%;
-    
+
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
@@ -102,11 +102,9 @@
   }
   body {
     @apply bg-background text-foreground;
-    /* Removed font-family: Arial, Helvetica, sans-serif; to rely on Geist from layout.tsx */
   }
 }
 
-/* Custom styles for animated cursor particles */
 .particle-text {
-  color: hsl(var(--primary)); /* Use primary color for particle text */
+  color: hsl(var(--primary));
 }
